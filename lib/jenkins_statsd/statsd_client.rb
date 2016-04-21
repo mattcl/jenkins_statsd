@@ -11,6 +11,10 @@ module JenkinsStatsd
       metrics[:gauges].each do |key, value|
         statsd.gauge(key, value)
       end
+
+      metrics[:meters].each do |key, value|
+        statsd.gauge(key, value)
+      end
     end
   end
 end
